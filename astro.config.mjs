@@ -17,6 +17,11 @@ export default defineConfig({
           label: "GitHub",
           href: "https://github.com/tkurzydym",
         },
+        {
+          icon: "linkedin",
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/tkurzydym/",
+        },
       ],
       customCss: ["./src/components/style/style.css"],
       components: {
@@ -28,6 +33,7 @@ export default defineConfig({
           metrics: {
             readingTime: true,
           },
+          navigation: "none",
         }),
       ],
       sidebar: [
