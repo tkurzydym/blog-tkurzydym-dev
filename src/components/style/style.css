@@ -1,0 +1,12 @@
+.astro-iigm5lgv {
+    border-radius: 10%;
+}
+
+#impressum-link {
+    margin-top: 5rem;
+}
+#line {
+    border: none;
+    height: 1px;
+    background-color: var(--sl-color-hairline);
+}

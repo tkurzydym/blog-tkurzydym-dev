@@ -1,0 +1,8 @@
+---
+const isImpressum = Astro.locals.starlightRoute.id === 'impressum';
+console.log(Astro.locals.starlightRoute.id);
+---
+
+{ !isImpressum && (
+  <div style="padding-top: 5rem"><hr id="line"><br><a id='impressum-link' href="/impressum"> Impressum </a></div>
+)}

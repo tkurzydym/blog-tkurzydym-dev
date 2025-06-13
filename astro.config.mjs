@@ -1,28 +1,53 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog'
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightBlog from "starlight-blog";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'TKurzydym',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/tkurzydym' }],
-			plugins: [starlightBlog()],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  integrations: [
+    starlight({
+      title: "TKurzydym",
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/tkurzydym",
+        },
+      ],
+      customCss: ["./src/components/style/style.css"],
+      components: {
+        Footer: "./src/components/ImpressumFooter.astro",
+        SiteTitle: "./src/overrides/SiteTitle.astro",
+      },
+      plugins: [
+        starlightBlog({
+          metrics: {
+            readingTime: true,
+          },
+        }),
+      ],
+      sidebar: [
+        {
+          label: "About",
+          link: "/about",
+        },
+        {
+          label: "Short Stories",
+          autogenerate: { directory: "stories" },
+        },
+        {
+          label: "Reference",
+          autogenerate: { directory: "reference" },
+        },
+        {
+          label: "Guides",
+          autogenerate: { directory: "guides" },
+        },
+      ],
+    }),
+    react(),
+  ],
 });
