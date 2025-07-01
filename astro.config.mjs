@@ -5,7 +5,6 @@ import starlightBlog from "starlight-blog";
 
 import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://tkurzydym.dev",
   integrations: [
@@ -40,6 +39,10 @@ export default defineConfig({
         {
           label: "About",
           link: "/about",
+        },
+        {
+          label: "Work",
+          link: "/work",
         },
         {
           label: "Short Stories",
